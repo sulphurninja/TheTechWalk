@@ -1,0 +1,282 @@
+<header class="header-default">
+<nav class="navbar navbar-expand-lg">
+<div class="container-xl">
+        <!-- logo  -->
+        <a href="/" class="navbar-brand">
+            <img src="/img/logo.png" style="width:50%; height:auto; max-width : 250px ;   display: block;
+            margin-left: auto;
+            margin-right: auto;">
+        </a>
+
+   
+
+        <div class="collapse navbar-collapse">
+                             <ul class="navbar-nav mr-auto">
+                                 <li class="nav-item dropdown active">
+                                     <a href="/" class="nav-link dropdown-toggle">Home</a>
+                                     <ul class="dropdown-menu">
+                                     <li>
+                                        <a href="/categories/Maharashtra" class="dropdown-item">Maharashtra</a>
+                                    </li>
+                            <li>
+                                <a href="/categories/Politics" class="dropdown-item">Politics</a>
+                            </li>
+                            <li>
+                                <a href="/categories/Crime" class="dropdown-item">Crime</a>
+                            </li>
+                             <li>
+                                <a href="/categories/Finance" class="dropdown-item">Finance</a>
+                            </li>
+                            <li>
+                                <a href="/categories/Technology" class="dropdown-item">Technology</a>
+                            </li>
+                         
+                        </ul>
+                    </li>
+                                  
+                <li class="nav-item">
+                <a href="/categories/Crime" class="nav-link">Crime</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Technology" class="nav-link">Technology</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/epaper" class="nav-link">Epaper</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- right side of header  -->
+        <div class="header-right">
+            <ul class="social-icons list-unstyled list-inline mb-0">
+                <li class="list-inline-item">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </li>
+            </ul>
+
+            <!-- buttons  -->
+            <div class="header-buttons">
+                <button class="search icon-button">
+                    <i class="icon-magnifier"></i>
+                </button>
+                <button class="burger-menu icon-button">
+                    <span class="burger-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+</header>
+
+<div class="padding-30 rounded bordered">
+                            <div class="row">
+<div class="col-md-12 col-sm-6">
+                                    <!-- post  -->
+                                    <% if(News !='') { %>
+                                        <% News.forEach(function(news, index){%>
+                                    <div class="post post-list clearfix">
+                                        <div class="thumb rounded">
+                                            <span class="post-format-sm">
+                                                <i class="icon-picture"></i>
+                                            </span>
+                                            <a href="/news/<%=news._id%>">
+                                                <div class="inner">
+                                                    <img src="/uploads/<%=news.image%>" alt="">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    
+                                        <div class="details">
+                                            <ul class="meta list-inline mb-3">
+                                                <li class="list-inline-item">
+                                                    <a href="#">
+                                                        <img src="" class="author" alt="">
+                                                    <%=news.authorname%>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="categories/<%=news.category%>"><%=news.category%></a>
+                                                </li>
+                                                <li class="list-inline-item"><%=news.date%></li>
+                                            </ul>
+                                            <h5 class="post-tile">
+                                                <a href="#">
+                                                    <%=news.name.substring(0, 50) + ".." %>
+                                                </a>
+                                            </h5>
+                                            <p class="excerpt mb-0">
+                                                <%=news.description.substring(0, 80)+ "...."%>
+                                            </p>
+                                            <div class="post-bottom clearfix d-flex align-items-center">
+                                                <div class="social-share me-auto">
+                                                    <button class="toggle-button icon-share"></button>
+                                                    <ul class="icons list-unstyled list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a href="#"><i class="far fa-envelope"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="more-button float-end">
+                                                    <a href="#"><span class="icon-options"></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+                                    <% } %>
+
+
+
+   <footer>
+<div class="container-xl">
+<div class="footer-inner">
+   <div class="row d-flex align-items-center gy-4">
+       <div class="col-md-4">
+           <span class="copyright">&copy; 2022 Rajya Loktantra</span>
+       </div>
+       <div class="col-md-4 text-center">
+           <ul class="social-icons list-unstyled list-inline mb-0">
+               <li class="list-inline-item">
+                   <a href="#">
+                       <i class="fab fa-facebook-f"></i>
+                   </a>
+               </li>
+               <li class="list-inline-item">
+                   <a href="#">
+                       <i class="fab fa-instagram"></i>
+                   </a>
+               </li>
+               <li class="list-inline-item">
+                   <a href="#">
+                       <i class="fab fa-pinterest"></i>
+                   </a>
+               </li>
+               <li class="list-inline-item">
+                   <a href="#">
+                       <i class="fab fa-itunes"></i>
+                   </a>
+               </li>
+               <li class="list-inline-item">
+                   <a href="#">
+                       <i class="fab fa-youtube"></i>
+                   </a>
+               </li>
+           </ul>
+       </div>
+       <div class="col-md-4">
+           <a href="#" id="return-to-top" class="float-md-end">
+               <i class="icon-arrow-up"></i>
+               Back to Top
+           </a>
+       </div>
+   </div>
+</div>
+</div>
+</footer>
+
+
+
+
+</div>
+
+
+<!-- canvas menu  -->
+
+<div class="canvas-menu d-flex align-items-end flex-column">
+<button class="btn-close" aria-label="Close" type="button"></button>
+
+<div class="logo">
+<img src="/img/logo.png" alt="">
+</div>
+<nav>
+<ul class="vertical-menu">
+<li class="active">
+   <a href="index.html">Home</a>
+   <ul class="submenu">
+   <% if(categories !='') { %>
+                           <% categories.forEach(function(category, index){%>
+       <li><a href="/categories/ <%-category.name%>"><%-category.name%></a></li>
+       <% }) %>
+       <% } %>
+   </ul>
+</li>
+<li><a href="#">Latest</a></li>
+<li><a href="#">Trending</a></li>
+<li><a href="#">Epaper</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+
+
+<ul class="social-icons list-unstyled list-inline mb-0 mt-auto w-100">
+<li class="list-inline-item">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+</li>
+<li class="list-inline-item">
+<a href="#"><i class="fab fa-twitter"></i></a>
+</li>
+<li class="list-inline-item">
+<a href="#"><i class="fab fa-itunes"></i></a>
+</li>
+<li class="list-inline-item">
+<a href="#"><i class="fab fa-pinterest"></i></a>
+</li>
+<li class="list-inline-item">
+<a href="#"><i class="fab fa-youtube"></i></a>
+</li>
+</ul>
+</div>
+
+
+<!-- search pop up  -->
+<div class="search-popup">
+<button class="btn-close" aria-label="Close" type="button"></button>
+
+<div class="search-content">
+<div class="text-center">
+<h3 class="mb-4 mt-0">Press ESC to close</h3>
+</div>
+
+<form method="POST" action="/search" class="d-flex search-form">
+<input type="search" name="searchTerm" placeholder="Search and press enter ..." aria-label="Search"
+   class="form-control me-2">
+<button class="btn btn-default btn-lg" type="submit">
+   <i class="icon-magnifier"></i>
+</button>
+</form>
+</div>
+</div>
+
+

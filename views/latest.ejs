@@ -1,0 +1,242 @@
+<header class="header-default">
+<nav class="navbar navbar-expand-lg">
+<div class="container-xl">
+        <!-- logo  -->
+        <a href="/" class="navbar-brand">
+            <img src="/img/logo.png" style="width:50%; height:auto; max-width : 250px ;   display: block;
+            margin-left: auto;
+            margin-right: auto;">
+        </a>
+
+   
+
+        <div class="collapse navbar-collapse">
+                             <ul class="navbar-nav mr-auto">
+                                 <li class="nav-item dropdown active">
+                                     <a href="/" class="nav-link dropdown-toggle">Home</a>
+                                     <ul class="dropdown-menu">
+                                     <li>
+                                        <a href="/categories/Maharashtra" class="dropdown-item">Maharashtra</a>
+                                    </li>
+                            <li>
+                                <a href="/categories/Politics" class="dropdown-item">Politics</a>
+                            </li>
+                            <li>
+                                <a href="/categories/Crime" class="dropdown-item">Crime</a>
+                            </li>
+                             <li>
+                                <a href="/categories/Finance" class="dropdown-item">Finance</a>
+                            </li>
+                            <li>
+                                <a href="/categories/Technology" class="dropdown-item">Technology</a>
+                            </li>
+                         
+                        </ul>
+                    </li>
+                                  
+                <li class="nav-item">
+                    <a href="/latest" class="nav-link">Latest</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Technology" class="nav-link">Technology</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/epaper" class="nav-link">Epaper</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- right side of header  -->
+        <div class="header-right">
+            <ul class="social-icons list-unstyled list-inline mb-0">
+                <li class="list-inline-item">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </li>
+            </ul>
+
+            <!-- buttons  -->
+            <div class="header-buttons">
+                <button class="search icon-button">
+                    <i class="icon-magnifier"></i>
+                </button>
+                <button class="burger-menu icon-button">
+                    <span class="burger-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+</header>
+
+
+<div class="news-container ">
+        <div class="news ">
+
+            <% articles.forEach(function(article,index){ %>
+
+                <% if ((typeof article.url=='object') || (typeof article.title=='object') || (typeof article.urlToImage=='object') || (typeof article.content=='object')){ %>
+                    <% } else{ %>
+                        <a href="<%- article.url %>" target="_blank" class="news-box Hover-effect">
+
+                            <img src="<%- article.urlToImage %>" alt="Image">
+                            <h3>
+                                <%- article.title %>
+                            </h3>
+
+
+                            <p>
+                                <%- article.content.replace(/<[^>]+>/g, '') %>
+                            </p>
+                            <br>
+                            <p style="margin-bottom: 0px; position: absolute; right: 0; bottom: 0; font-family: ui-monospace;">Updated: <span style="color:red;" ><%- new Date(article.publishedAt.slice(0,10)).toDateString() %>    <%- moment.utc(article.publishedAt).local().format('hh : mm A') %> </span></p>
+
+
+                        </a>
+                        <% } %>
+                        <% }) %>
+        </div>
+    </div>
+    <script src="moment.js"></script>
+<script src="moment-timezone-with-data.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+   <footer>
+<div class="container-xl">
+<div class="footer-inner">
+   <div class="row d-flex align-items-center gy-4">
+       <div class="col-md-4">
+           <span class="copyright">&copy; 2022 Rajya Loktantra</span>
+       </div>
+       <div class="col-md-4 text-center">
+           <ul class="social-icons list-unstyled list-inline mb-0">
+               <li class="list-inline-item">
+                   <a href="#">
+                       <i class="fab fa-facebook-f"></i>
+                   </a>
+               </li>
+               <li class="list-inline-item">
+                   <a href="#">
+                       <i class="fab fa-instagram"></i>
+                   </a>
+               </li>
+               <li class="list-inline-item">
+                   <a href="#">
+                       <i class="fab fa-pinterest"></i>
+                   </a>
+               </li>
+               <li class="list-inline-item">
+                   <a href="#">
+                       <i class="fab fa-itunes"></i>
+                   </a>
+               </li>
+               <li class="list-inline-item">
+                   <a href="#">
+                       <i class="fab fa-youtube"></i>
+                   </a>
+               </li>
+           </ul>
+       </div>
+       <div class="col-md-4">
+           <a href="#" id="return-to-top" class="float-md-end">
+               <i class="icon-arrow-up"></i>
+               Back to Top
+           </a>
+       </div>
+   </div>
+</div>
+</div>
+</footer>
+
+
+
+
+</div>
+
+
+<!-- canvas menu  -->
+
+<div class="canvas-menu d-flex align-items-end flex-column">
+<button class="btn-close" aria-label="Close" type="button"></button>
+
+<div class="logo">
+<img src="/img/logo.png" alt="">
+</div>
+<nav>
+<ul class="vertical-menu">
+<li class="active">
+   <a href="index.html">Home</a>
+   <ul class="submenu">
+   <% if(categories !='') { %>
+                           <% categories.forEach(function(category, index){%>
+       <li><a href="/categories/ <%-category.name%>"><%-category.name%></a></li>
+       <% }) %>
+       <% } %>
+   </ul>
+</li>
+<li><a href="#">Latest</a></li>
+<li><a href="#">Trending</a></li>
+<li><a href="#">Epaper</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+
+
+<ul class="social-icons list-unstyled list-inline mb-0 mt-auto w-100">
+<li class="list-inline-item">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+</li>
+<li class="list-inline-item">
+<a href="#"><i class="fab fa-twitter"></i></a>
+</li>
+<li class="list-inline-item">
+<a href="#"><i class="fab fa-itunes"></i></a>
+</li>
+<li class="list-inline-item">
+<a href="#"><i class="fab fa-pinterest"></i></a>
+</li>
+<li class="list-inline-item">
+<a href="#"><i class="fab fa-youtube"></i></a>
+</li>
+</ul>
+</div>
+
+
+<!-- search pop up  -->
+<div class="search-popup">
+<button class="btn-close" aria-label="Close" type="button"></button>
+
+<div class="search-content">
+<div class="text-center">
+<h3 class="mb-4 mt-0">Press ESC to close</h3>
+</div>
+
+<form method="POST" action="/search" class="d-flex search-form">
+<input type="search" name="searchTerm" placeholder="Search and press enter ..." aria-label="Search"
+   class="form-control me-2">
+<button class="btn btn-default btn-lg" type="submit">
+   <i class="icon-magnifier"></i>
+</button>
+</form>
+</div>
+</div>
+
+
